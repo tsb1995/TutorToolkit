@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="student"
+            type="com.taymath.tutortoolkit.studentdatabase.Student" />
+        <variable
+            name="clickListener"
+            type="com.taymath.tutortoolkit.studentlist.StudentListener"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/student_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:contentDescription="@string/image_representing_student"
+            android:isScrollContainer="false"
+            android:onClick="@{() -> clickListener.onClick(student)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:studentImage="@{student}"
+            tools:srcCompat="@drawable/ic_item_test" />
+
+        <TextView
+            android:id="@+id/grade_string_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:hint="@string/subject"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/student_image"
+            app:layout_constraintTop_toBottomOf="@+id/grade_float_text"
+            app:subjectText="@{student}" />
+
+        <TextView
+            android:id="@+id/grade_float_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:hint="@string/student_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/student_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:studentNameText="@{student}" />
+
+        <TextView
+            android:id="@+id/note_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:hint="@string/grade_level"
+            app:gradeLevelText="@{student}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/student_image"
+            app:layout_constraintTop_toBottomOf="@+id/grade_string_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

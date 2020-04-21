@@ -1,59 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
-    app:startDestination="@id/studentListFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/studentListFragment"
+    tools:ignore="ExtraText">
 
     <fragment
-        android:id="@+id/studentListFragment"
-        android:name="com.taymath.tutortoolkit.studentlist.StudentListFragment"
-        android:label="StudentListFragment" >
+        android:id="@+id/addGradeFragment"
+        android:name="com.taymath.tutortoolkit.addgrade.AddGradeFragment"
+        android:label="AddGradeFragment" >
         <action
-            android:id="@+id/action_studentListFragment_to_addStudentFragment"
-            app:destination="@id/addStudentFragment" />
-        <action
-            android:id="@+id/action_studentListFragment_to_studentDetailFragment"
-            app:destination="@id/studentDetailFragment" />
+            android:id="@+id/action_addGradeFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+        <argument
+            android:name="student_id"
+            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/addStudentFragment"
         android:name="com.taymath.tutortoolkit.addstudent.AddStudentFragment"
         android:label="AddStudentFragment" >
         <action
-            android:id="@+id/action_addStudentFragment_to_studentListFragment"
-            app:destination="@id/studentListFragment" />
-        <action
             android:id="@+id/action_addStudentFragment_to_chooseIconFragment"
-            app:destination="@id/chooseIconFragment" />
-        <action
-            android:id="@+id/action_addStudentFragment_to_chooseIconFragment2"
             app:destination="@id/chooseIconFragment" />
     </fragment>
     <fragment
         android:id="@+id/studentDetailFragment"
         android:name="com.taymath.tutortoolkit.studentdetail.StudentDetailFragment"
         android:label="StudentDetailFragment" >
-        <action
-            android:id="@+id/action_studentDetailFragment_to_studentListFragment"
-            app:destination="@id/studentListFragment" />
-        <action
-            android:id="@+id/action_studentDetailFragment_to_addGradeFragment"
-            app:destination="@id/addGradeFragment" />
-        <argument android:name="student_id"
-            app:argType="long" />
-    </fragment>
-    <fragment
-        android:id="@+id/addGradeFragment"
-        android:name="com.taymath.tutortoolkit.addgrade.AddGradeFragment"
-        android:label="AddGradeFragment" >
         <argument
             android:name="student_id"
             app:argType="long" />
         <action
-            android:id="@+id/action_addGradeFragment_to_studentListFragment"
+            android:id="@+id/action_studentDetailFragment_to_addGradeFragment"
+            app:destination="@id/addGradeFragment" />
+        <action
+            android:id="@+id/action_studentDetailFragment_to_studentListFragment"
             app:destination="@id/studentListFragment" />
     </fragment>
     <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.taymath.tutortoolkit.studentlist.StudentListFragment"
+        android:label="StudentListFragment" >
+        <action
+            android:id="@+id/action_studentListFragment_to_studentDetailFragment"
+            app:destination="@id/studentDetailFragment" />
+        <action
+            android:id="@+id/action_studentListFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+    </fragment>
+
+
+    <fragment
         android:id="@+id/chooseIconFragment"
         android:name="com.taymath.tutortoolkit.chooseicon.ChooseIconFragment"
-        android:label="ChooseIconFragment" />
+        android:label="ChooseIconFragment">
+        <action
+            android:id="@+id/action_chooseIconFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+    </fragment>
+
 </navigation>

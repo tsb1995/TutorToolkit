@@ -1,20 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright 2018, The Android Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
-
-<!-- Wrapping the layout into /layout to make it available with data binding. -->
+<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -23,7 +7,6 @@
      the whole ViewModel, so that we can access the LiveData,
      click handlers, and state variables. -->
     <data>
-
         <variable
             name="chooseIconViewModel"
             type="com.taymath.tutortoolkit.chooseicon.ChooseIconViewModel"/>
@@ -45,14 +28,100 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/quality_zero_image"
+        <ImageButton
+            android:id="@+id/icon_one_image"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/triple_margin"
             android:contentDescription="@string/icon_1"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="@{() -> chooseIconViewModel.onChooseIcon(1)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_text"
             app:srcCompat="@drawable/icon_1" />
+
+        <ImageButton
+            android:id="@+id/icon_two_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/triple_margin"
+            android:contentDescription="@string/icon_1"
+            android:onClick="@{() -> chooseIconViewModel.onChooseIcon(2)}"
+            app:layout_constraintEnd_toStartOf="@+id/icon_three_image"
+            app:layout_constraintStart_toEndOf="@+id/icon_one_image"
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            app:srcCompat="@drawable/icon_2" />
+
+        <ImageButton
+            android:id="@+id/icon_three_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/triple_margin"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/icon_1"
+            android:onClick="@{() -> chooseIconViewModel.onChooseIcon(3)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            app:srcCompat="@drawable/icon_3" />
+
+        <ImageButton
+            android:id="@+id/icon_four_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/triple_margin"
+            android:contentDescription="@string/icon_1"
+            android:onClick="@{() -> chooseIconViewModel.onChooseIcon(4)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_two_image"
+            app:srcCompat="@drawable/icon_4" />
+
+        <ImageButton
+            android:id="@+id/icon_five_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/triple_margin"
+            android:layout_marginStart="74dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/icon_1"
+            android:onClick="@{() -> chooseIconViewModel.onChooseIcon(5)}"
+            app:layout_constraintEnd_toStartOf="@+id/icon_six_image"
+            app:layout_constraintStart_toEndOf="@+id/icon_four_image"
+            app:layout_constraintTop_toBottomOf="@+id/icon_two_image"
+            app:srcCompat="@drawable/icon_5" />
+
+        <ImageButton
+            android:id="@+id/icon_six_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/triple_margin"
+            android:contentDescription="@string/icon_1"
+            android:onClick="@{() -> chooseIconViewModel.onChooseIcon(6)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_two_image"
+            app:srcCompat="@drawable/icon_6" />
+
+        <ImageButton
+            android:id="@+id/icon_seven_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/triple_margin"
+            android:contentDescription="@string/icon_1"
+            android:onClick="@{() -> chooseIconViewModel.onChooseIcon(7)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_five_image"
+            app:srcCompat="@drawable/icon_7" />
+
+        <ImageButton
+            android:id="@+id/icon_eight_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/triple_margin"
+            android:layout_marginTop="105dp"
+            android:contentDescription="@string/icon_1"
+            android:onClick="@{() -> chooseIconViewModel.onChooseIcon(8)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_five_image"
+            app:srcCompat="@drawable/icon_8" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

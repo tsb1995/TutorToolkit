@@ -91,29 +91,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/address_text" />
 
-        <Button
-            android:id="@+id/add_student_button"
-            style="@style/AddButtons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:onClick="@{() -> addStudentViewModel.onAddStudent(studentNameText.getText().toString(), subjectText.getText().toString(), gradeText.getText().toString(), addressText.getText().toString(), emailText.getText().toString())}"
-            android:text="@string/add_student"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
+            android:onClick="@{() -> addStudentViewModel.onChooseIcon(studentNameText.getText().toString(), subjectText.getText().toString(), gradeText.getText().toString(), addressText.getText().toString(), emailText.getText().toString())}"
+            app:srcCompat="@drawable/icon_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email_text"
-            app:srcCompat="@drawable/icon_1"
             android:contentDescription="@string/student_image_icon_choice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

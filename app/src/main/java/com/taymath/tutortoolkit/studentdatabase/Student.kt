@@ -42,6 +42,9 @@ data class Student  (
         var addressString: String = "CHECK_Student.KT",
 
         @ColumnInfo(name = "email")
-        var emailString: String = "CHECK_Student.KT"
+        var emailString: String = "CHECK_Student.KT",
+
+        @ColumnInfo(name="iconNumber")
+        var iconNumber: Int = 1
 
 )

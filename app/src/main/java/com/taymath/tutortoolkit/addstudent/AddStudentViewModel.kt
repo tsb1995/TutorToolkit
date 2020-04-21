@@ -1,15 +1,24 @@
 package com.taymath.tutortoolkit.addstudent
 
+import android.util.Log
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.taymath.tutortoolkit.R
 import com.taymath.tutortoolkit.studentdatabase.Student
 import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.studentdetail.StudentDetailFragmentArgs
 import kotlinx.coroutines.*
+
 
 class AddStudentViewModel(
     val database: StudentDatabaseDao
 ) : ViewModel() {
+
+    val newStudent = Student()
 
     // Initialize viewModelJob
     private val viewModelJob = Job()
@@ -17,26 +26,28 @@ class AddStudentViewModel(
     // Initialize uiScope
     private val uiScope =  CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    // Setup Livdata to signal when to navigate to studentList
-    private val _navigateToStudentList =  MutableLiveData<Boolean?>()
-    val navigateToStudentList: LiveData<Boolean?>
-        get() = _navigateToStudentList
+    private var currentStudent = MutableLiveData<Student?>()
+
+    // Setup Livdata to signal when to navigate to chooseIcon
+    private val _navigateToChooseIcon = MutableLiveData<Boolean?>()
+    val navigateToChooseIcon: LiveData<Boolean?>
+        get() = _navigateToChooseIcon
 
     // Initialize Student and add to student_table
-    fun onAddStudent(studentNameString : String, subjectString: String,
+    fun onChooseIcon(studentNameString : String, subjectString: String,
     gradeLevelString: String, addressString: String, emailString: String) {
+        newStudent.studentNameString = studentNameString
+        newStudent.subjectString = subjectString
+        newStudent.emailString = emailString
+        newStudent.gradeLevelString = gradeLevelString
+        newStudent.addressString = addressString
+
         uiScope.launch {
             withContext(Dispatchers.IO) {
-                val newStudent = Student()
-                newStudent.studentNameString = studentNameString
-                newStudent.subjectString = subjectString
-                newStudent.emailString = emailString
-                newStudent.gradeLevelString = gradeLevelString
-                newStudent.addressString = addressString
                 insert(newStudent)
             }
         }
-        _navigateToStudentList.value = true
+        _navigateToChooseIcon.value = true
     }
 
     override fun onCleared() {
@@ -45,7 +56,7 @@ class AddStudentViewModel(
     }
 
     fun doneNavigating() {
-        _navigateToStudentList.value = null
+        _navigateToChooseIcon.value = null
     }
 
     private suspend fun insert(student: Student) {
@@ -54,14 +65,17 @@ class AddStudentViewModel(
         }
     }
 
-//    fun onSetSleepQuality(quality: Int) {
-//        uiScope.launch {
-//            withContext(Dispatchers.IO) {
-//                val tonight = database.get(sleepNightKey) ?: return@withContext
-//                tonight.sleepQuality = quality
-//                database.update(tonight)
-//            }
-//            _navigateToSleepTracker.value = true
-//        }
-//    }
+    private suspend fun getCurrentStudentFromDatabase(): Student? {
+        return withContext(Dispatchers.IO) {
+            var student = database.getCurrentStudent()
+            student
+        }
+    }
+
+    private fun initializeCurrentStudent() {
+        uiScope.launch {
+            currentStudent.value = getCurrentStudentFromDatabase()
+        }
+    }
+
 }

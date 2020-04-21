@@ -6,12 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.taymath.tutortoolkit.R
 import com.taymath.tutortoolkit.databinding.FragmentChooseIconBinding
 import com.taymath.tutortoolkit.studentdatabase.StudentDatabase
 
+/**
+ * Fragment that displays a list of clickable icons,
+ * each representing a sleep quality rating.
+ * Once the user taps an icon, the quality is set in the current sleepNight
+ * and the database is updated.
+ */
 class ChooseIconFragment : Fragment() {
 
     /**
@@ -28,8 +35,6 @@ class ChooseIconFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
 
-//        val arguments = SleepQualityFragmentArgs.fromBundle(arguments!!)
-
         // Create an instance of the ViewModel Factory.
         val dataSource = StudentDatabase.getInstance(application).studentDatabaseDao
         val viewModelFactory = ChooseIconViewModelFactory(dataSource)
@@ -44,15 +49,15 @@ class ChooseIconFragment : Fragment() {
         binding.chooseIconViewModel = chooseIconViewModel
 
         // Add an Observer to the state variable for Navigating when a Quality icon is tapped.
-//        chooseIconViewModel.navigateToSleepTracker.observe(this, Observer {
-//            if (it == true) { // Observed state is true.
-//                this.findNavController().navigate(
-//                    SleepQualityFragmentDirections.actionSleepQualityFragmentToSleepTrackerFragment())
-//                // Reset state to make sure we only navigate once, even if the device
-//                // has a configuration change.
-//                sleepQualityViewModel.doneNavigating()
-//            }
-//        })
+        chooseIconViewModel.navigateToStudentList.observe(viewLifecycleOwner, Observer {
+            if (it == true) { // Observed state is true.
+                this.findNavController().navigate(
+                    ChooseIconFragmentDirections.actionChooseIconFragmentToStudentListFragment())
+                // Reset state to make sure we only navigate once, even if the device
+                // has a configuration change.
+                chooseIconViewModel.doneNavigating()
+            }
+        })
 
         return binding.root
     }

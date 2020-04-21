@@ -4,6 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
 
+/**
+ * This is pretty much boiler plate code for a ViewModel Factory.
+ *
+ * Provides the key for the night and the SleepDatabaseDao to the ViewModel.
+ */
 class ChooseIconViewModelFactory(
     private val dataSource: StudentDatabaseDao) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")

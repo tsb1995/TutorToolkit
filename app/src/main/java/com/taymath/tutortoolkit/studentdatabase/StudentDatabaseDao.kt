@@ -17,16 +17,13 @@
 package com.taymath.tutortoolkit.studentdatabase
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface StudentDatabaseDao {
 
     // Student Table Dao
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertStudent(student: Student)
 
     @Update
@@ -47,11 +44,14 @@ interface StudentDatabaseDao {
     @Query("SELECT * from student_table WHERE studentId = :key")
     fun getStudentWithId(key: Long): LiveData<Student>
 
-    @Query("SELECT * FROM student_table WHERE studentId = :studentId")
-    fun getStudentClassWithId(studentId: Long): Student
+    @Query("SELECT * from student_table WHERE studentId = :key")
+    fun getStudentClassWithId(key: Long): Student?
 
     @Query("SELECT * from student_table WHERE student_name = :studentName")
     fun getStudentWithName(studentName: String): LiveData<Student>
+
+    @Query("SELECT * FROM student_table ORDER BY studentId DESC LIMIT 1")
+    fun getCurrentStudent(): Student?
 
 
 

@@ -46,14 +46,27 @@ class AddStudentFragment : Fragment() {
 
         binding.setLifecycleOwner(this)
 
-        // Listen for when we navigate to student list
-        addStudentViewModel.navigateToStudentList.observe(viewLifecycleOwner, Observer {
+//        // Add an Observer to the state variable for Navigating when student icon is clicked.
+//        addStudentViewModel.navigateToChooseIcon.observe(viewLifecycleOwner, Observer {student ->
+//            student?.let {
+//                this.findNavController().navigate(AddStudentFragmentDirections
+//                    .actionAddStudentFragmentToChooseIconFragment(student.studentId))
+//                addStudentViewModel.doneNavigating()
+//            }
+//        })
+
+        // Add an Observer to the state variable for Navigating when a Quality icon is tapped.
+        addStudentViewModel.navigateToChooseIcon.observe(viewLifecycleOwner, Observer {
             if (it == true) { // Observed state is true.
                 this.findNavController().navigate(
-                    AddStudentFragmentDirections.actionAddStudentFragmentToStudentListFragment())
+                    AddStudentFragmentDirections.actionAddStudentFragmentToChooseIconFragment())
+                // Reset state to make sure we only navigate once, even if the device
+                // has a configuration change.
                 addStudentViewModel.doneNavigating()
             }
         })
+
+
         return binding.root
     }
 }

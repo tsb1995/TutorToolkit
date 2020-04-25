@@ -1,11 +1,10 @@
 package com.taymath.tutortoolkit
 
-import android.content.Context
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
-import com.taymath.tutortoolkit.studentdatabase.Grade
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabase
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.database.Grade
+import com.taymath.tutortoolkit.database.StudentDatabase
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 import org.hamcrest.CoreMatchers.equalTo
 import org.junit.After
 import org.junit.Test

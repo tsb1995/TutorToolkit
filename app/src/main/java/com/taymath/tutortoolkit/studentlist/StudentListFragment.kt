@@ -11,8 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.taymath.tutortoolkit.R
 import com.taymath.tutortoolkit.databinding.FragmentStudentListBinding
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabase
-import kotlinx.android.synthetic.main.fragment_add_student.*
+import com.taymath.tutortoolkit.database.StudentDatabase
 
 /**
  * A fragment with buttons to record start and end times for sleep, which are saved in
@@ -40,7 +39,7 @@ class StudentListFragment : Fragment() {
         val dataSource = StudentDatabase.getInstance(application).studentDatabaseDao
 
         // Create instance of viewModelFactory using DAO and application
-        val viewModelFactory = StudentListViewModelFactory(dataSource, application)
+        val viewModelFactory = StudentListViewModelFactory(dataSource)
 
         // Get reference to viewModel
         val studentListViewModel =

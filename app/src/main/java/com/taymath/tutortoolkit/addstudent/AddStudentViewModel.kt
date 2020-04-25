@@ -1,16 +1,10 @@
 package com.taymath.tutortoolkit.addstudent
 
-import android.util.Log
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.taymath.tutortoolkit.R
-import com.taymath.tutortoolkit.studentdatabase.Student
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
-import com.taymath.tutortoolkit.studentdetail.StudentDetailFragmentArgs
+import com.taymath.tutortoolkit.database.Student
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 import kotlinx.coroutines.*
 
 

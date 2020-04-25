@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.taymath.tutortoolkit.databinding.ListItemStudentBinding
-import com.taymath.tutortoolkit.studentdatabase.Student
+import com.taymath.tutortoolkit.database.Student
 
 class StudentAdapter(val clickListener: StudentListener) : ListAdapter<Student, StudentAdapter.ViewHolder>(StudentDiffCallback()) {
 

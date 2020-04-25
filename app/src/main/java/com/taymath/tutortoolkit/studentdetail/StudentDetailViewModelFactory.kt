@@ -2,8 +2,7 @@ package com.taymath.tutortoolkit.studentdetail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.taymath.tutortoolkit.studentdatabase.Student
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 
 class StudentDetailViewModelFactory(
     private val dataSource: StudentDatabaseDao,

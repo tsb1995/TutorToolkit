@@ -1,17 +1,14 @@
 package com.taymath.tutortoolkit.studentlist
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.taymath.tutortoolkit.studentdatabase.Student
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import androidx.lifecycle.ViewModel
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 import kotlinx.coroutines.*
 
 class StudentListViewModel(
-    val database: StudentDatabaseDao,
-    application: Application
-) : AndroidViewModel(application) {
+    val database: StudentDatabaseDao
+) : ViewModel() {
 
     /** Coroutine setup variables */
 

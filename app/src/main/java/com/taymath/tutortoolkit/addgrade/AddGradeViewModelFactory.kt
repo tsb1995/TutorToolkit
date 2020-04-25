@@ -2,8 +2,7 @@ package com.taymath.tutortoolkit.addgrade
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.taymath.tutortoolkit.studentdatabase.Student
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 
 class AddGradeViewModelFactory(
     private val student_id: Long,

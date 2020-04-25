@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.taymath.tutortoolkit.R
 import com.taymath.tutortoolkit.databinding.FragmentAddStudentBindingImpl
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabase
+import com.taymath.tutortoolkit.database.StudentDatabase
 
 class AddStudentFragment : Fragment() {
 

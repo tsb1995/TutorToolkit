@@ -1,8 +1,8 @@
 package com.taymath.tutortoolkit.studentdetail
 
 import androidx.lifecycle.*
-import com.taymath.tutortoolkit.studentdatabase.Student
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.database.Student
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 import kotlinx.coroutines.*
 
 class StudentDetailViewModel(

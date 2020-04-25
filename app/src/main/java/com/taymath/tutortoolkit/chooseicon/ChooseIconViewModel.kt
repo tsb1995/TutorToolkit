@@ -3,7 +3,7 @@ package com.taymath.tutortoolkit.chooseicon
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 import kotlinx.coroutines.*
 
 /**

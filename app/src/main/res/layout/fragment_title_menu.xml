@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- Get reference to titleMenuViewModel -->
+        <variable
+            name="titleMenuViewModel"
+            type="com.taymath.tutortoolkit.titlemenu.TitleMenuViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/main_icon_image"
+            android:layout_width="187dp"
+            android:layout_height="187dp"
+            android:layout_margin="@dimen/triple_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            app:srcCompat="@drawable/main_icon"
+            android:contentDescription="@string/image_of_main_icon" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/triple_margin"
+            android:text="@string/tutortoolkit"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/student_list_button"
+            style="@style/AddButtons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/triple_margin"
+            android:onClick="@{() -> titleMenuViewModel.onNavigateToStudentList()}"
+            android:text="@string/student_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_icon_image" />
+
+        <Button
+            android:id="@+id/todo_list_button"
+            style="@style/AddButtons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/triple_margin"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginEnd="@dimen/triple_margin"
+            android:text="@string/todo_list"
+            android:onClick="@{() -> titleMenuViewModel.onNavigateToTodoList()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/student_list_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

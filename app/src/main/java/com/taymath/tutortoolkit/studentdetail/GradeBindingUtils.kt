@@ -2,7 +2,7 @@ package com.taymath.tutortoolkit.studentdetail
 
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.taymath.tutortoolkit.studentdatabase.Grade
+import com.taymath.tutortoolkit.database.Grade
 
 @BindingAdapter("gradeFloat")
 fun TextView.setGradeFloat(item: Grade?){

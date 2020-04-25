@@ -2,7 +2,7 @@ package com.taymath.tutortoolkit.chooseicon
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 
 /**
  * This is pretty much boiler plate code for a ViewModel Factory.

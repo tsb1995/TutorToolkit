@@ -7,7 +7,7 @@
     <data>
         <variable
             name="student"
-            type="com.taymath.tutortoolkit.studentdatabase.Student" />
+            type="com.taymath.tutortoolkit.database.Student" />
         <variable
             name="clickListener"
             type="com.taymath.tutortoolkit.studentlist.StudentListener"/>
@@ -61,6 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
+            android:layout_marginStart="225dp"
             android:hint="@string/grade_level"
             app:gradeLevelText="@{student}"
             app:layout_constraintEnd_toEndOf="parent"

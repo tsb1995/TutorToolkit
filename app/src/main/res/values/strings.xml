@@ -23,4 +23,13 @@
     <string name="student_image_icon_choice">Student Image Icon Choice</string>
     <string name="icon_1">Icon 1</string>
     <string name="choose_your_icon">Choose Your Icon!</string>
+    <string name="student_list">Student List</string>
+    <string name="tutortoolkit">TutorToolkit</string>
+    <string name="todo_list">Todo List</string>
+    <string name="image_of_main_icon">Image of main icon</string>
+    <string name="add_todo">Add Todo</string>
+    <string name="enter_todo_item_here">Enter Todo Item Here</string>
+    <string name="enter_student_name_here">Enter Student Name Here</string>
+    <string name="enter">Enter</string>
+    <string name="todo_item">Todo Item</string>
 </resources>

@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/studentListFragment"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    app:startDestination="@id/titleMenuFragment">
 
     <fragment
         android:id="@+id/addGradeFragment"
@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_studentListFragment_to_addStudentFragment"
             app:destination="@id/addStudentFragment" />
+        <action
+            android:id="@+id/action_studentListFragment_to_titleMenuFragment"
+            app:destination="@id/titleMenuFragment" />
     </fragment>
 
 
@@ -59,6 +62,33 @@
         <action
             android:id="@+id/action_chooseIconFragment_to_studentListFragment"
             app:destination="@id/studentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/titleMenuFragment"
+        android:name="com.taymath.tutortoolkit.titlemenu.TitleMenuFragment"
+        android:label="TitleMenuFragment" >
+        <action
+            android:id="@+id/action_titleMenuFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+        <action
+            android:id="@+id/action_titleMenuFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.taymath.tutortoolkit.todolist.TodoListFragment"
+        android:label="TodoListFragment" >
+        <action
+            android:id="@+id/action_todoListFragment_to_getTodoFragment"
+            app:destination="@id/getTodoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getTodoFragment"
+        android:name="com.taymath.tutortoolkit.gettodo.GetTodoFragment"
+        android:label="GetTodoFragment" >
+        <action
+            android:id="@+id/action_getTodoFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment" />
     </fragment>
 
 </navigation>

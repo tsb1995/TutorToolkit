@@ -7,7 +7,7 @@
     <data>
         <variable
             name="grade"
-            type="com.taymath.tutortoolkit.studentdatabase.Grade" />
+            type="com.taymath.tutortoolkit.database.Grade" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

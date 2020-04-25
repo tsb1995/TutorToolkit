@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taymath.tutortoolkit.studentdatabase
+package com.taymath.tutortoolkit.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

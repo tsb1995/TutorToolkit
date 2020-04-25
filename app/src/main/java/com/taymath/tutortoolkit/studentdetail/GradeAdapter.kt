@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.taymath.tutortoolkit.databinding.ListItemGradeBinding
-import com.taymath.tutortoolkit.studentdatabase.Grade
+import com.taymath.tutortoolkit.database.Grade
 
 class GradeAdapter : ListAdapter<Grade,
         GradeAdapter.ViewHolder>(GradeDiffCallback()) {

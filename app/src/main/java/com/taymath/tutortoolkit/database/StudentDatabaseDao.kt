@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taymath.tutortoolkit.studentdatabase
+package com.taymath.tutortoolkit.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
@@ -82,6 +82,28 @@ interface StudentDatabaseDao {
 
     @Query("SELECT * from grade_table WHERE student_id_long = :studentId")
     fun getGradesWithStudentId(studentId: Long): LiveData<List<Grade>>
+
+    // Todo Table Dao
+    @Insert
+    fun insertTodo(night: Todo)
+
+    @Update
+    fun updateTodo(night: Todo)
+
+    @Query("SELECT * FROM todo_list_table WHERE todoId= :key")
+    fun get(key: Long) : Todo?
+
+    @Query("DELETE FROM todo_list_table")
+    fun clearTodos()
+
+    @Query("SELECT * FROM todo_list_table ORDER BY todoId DESC LIMIT 1")
+    fun getTodo(): Todo?
+
+    @Query("SELECT * FROM todo_list_table ORDER BY todoId DESC")
+    fun getAllTodos(): LiveData<List<Todo>>
+
+    @Query("DELETE FROM todo_list_table WHERE todoId= :key")
+    fun deleteTodoById(key: Long)
 
 }
 

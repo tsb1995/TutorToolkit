@@ -11,9 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.taymath.tutortoolkit.R
 import com.taymath.tutortoolkit.databinding.FragmentStudentDetailBinding
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabase
-import com.taymath.tutortoolkit.studentlist.StudentListFragmentDirections
-import com.taymath.tutortoolkit.studentlist.StudentListener
+import com.taymath.tutortoolkit.database.StudentDatabase
 
 class StudentDetailFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.taymath.tutortoolkit.studentdatabase
+package com.taymath.tutortoolkit.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Student::class, Grade::class], version = 1,  exportSchema = false)
+@Database(entities = [Student::class, Grade::class, Todo::class], version = 1,  exportSchema = false)
 abstract class StudentDatabase : RoomDatabase() {
 
     abstract val studentDatabaseDao: StudentDatabaseDao

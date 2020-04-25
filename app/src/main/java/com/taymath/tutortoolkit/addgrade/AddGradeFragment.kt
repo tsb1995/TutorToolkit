@@ -1,23 +1,17 @@
 package com.taymath.tutortoolkit.addgrade
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.taymath.tutortoolkit.R
-import com.taymath.tutortoolkit.addstudent.AddStudentFragmentDirections
 import com.taymath.tutortoolkit.databinding.FragmentAddGradeBindingImpl
-import com.taymath.tutortoolkit.databinding.FragmentAddStudentBindingImpl
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabase
-import kotlinx.android.synthetic.main.fragment_add_grade.*
+import com.taymath.tutortoolkit.database.StudentDatabase
 
 class AddGradeFragment : Fragment() {
 

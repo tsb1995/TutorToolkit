@@ -11,7 +11,7 @@
             type="com.taymath.tutortoolkit.addstudent.AddStudentViewModel"/>
         <variable
             name="student"
-            type="com.taymath.tutortoolkit.studentdatabase.Student" />
+            type="com.taymath.tutortoolkit.database.Student" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
             android:onClick="@{() -> addStudentViewModel.onChooseIcon(studentNameText.getText().toString(), subjectText.getText().toString(), gradeText.getText().toString(), addressText.getText().toString(), emailText.getText().toString())}"
-            app:srcCompat="@drawable/icon_1"
+            app:srcCompat="@drawable/face3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"

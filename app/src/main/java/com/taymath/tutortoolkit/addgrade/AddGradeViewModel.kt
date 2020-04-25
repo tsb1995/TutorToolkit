@@ -1,13 +1,12 @@
 package com.taymath.tutortoolkit.addgrade
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.taymath.tutortoolkit.studentdatabase.Grade
-import com.taymath.tutortoolkit.studentdatabase.Student
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.database.Grade
+import com.taymath.tutortoolkit.database.Student
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 import kotlinx.coroutines.*
 
 class AddGradeViewModel(

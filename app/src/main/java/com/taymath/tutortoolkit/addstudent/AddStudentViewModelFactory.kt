@@ -2,7 +2,7 @@ package com.taymath.tutortoolkit.addstudent
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.taymath.tutortoolkit.studentdatabase.StudentDatabaseDao
+import com.taymath.tutortoolkit.database.StudentDatabaseDao
 
 class AddStudentViewModelFactory(
     private val dataSource: StudentDatabaseDao
